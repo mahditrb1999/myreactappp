@@ -17,3 +17,11 @@ body {
   font-family: 'IRANMarker', sans-serif;
   direction: rtl; /* اگر می‌خوای متن راست‌چین باشه */
 }
+
+a .logot{
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+
+padding: 0;
+}

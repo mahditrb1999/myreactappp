@@ -33,8 +33,9 @@ const App = () => {
         {/* Logo Section */}
         <div className={styles.logoContainer}>
           <a href="#" className={styles.logo}>
-            TRB DEV
+           <img className='logot' src="/pics/logo.jpg" alt="" />
           </a>
+      
         </div>
 
         {/* Mobile menu button (hamburger icon) */}
