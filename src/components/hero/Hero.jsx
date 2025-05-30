@@ -1,6 +1,7 @@
 // src/components/HeroSection/HeroSection.js
 import React from 'react';
 import styles from './hero.module.css'; // Import the CSS module
+import HeroSlider from "../slider/HeroSlider"
 
 const Hero = () => {
   return (
@@ -8,16 +9,9 @@ const Hero = () => {
       <div className={styles.heroContentWrapper}>
         {/* Left Column: Image */}
         <div className={styles.heroImageContainer}>
-          {/* Replace 'path/to/your/hero-image.jpg' with your actual image path */}
-          <img
-            src="/pics/firm2.png"
-            alt="IT Services"
-            className={styles.heroImage}
-            // Optional: Fallback for image loading errors
-            onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}
-          />
+          {/* Integrate the HeroSlider component here */}
+          <HeroSlider />
         </div>
-
         {/* Right Column: Text Content */}
         <div className={styles.heroTextContent}>
           <h1 className={styles.heroHeadline}>
