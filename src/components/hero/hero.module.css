@@ -1,3 +1,128 @@
-.ttt{
-    margin-top: 1000px;
-}
+/* src/components/HeroSection/Hero.module.css */
+
+.heroSection {
+    background-color: #f7f8f3; /* Light background for contrast */
+    padding: 60px 20px; /* Adjust padding as needed */
+    min-height: 70vh; /* Ensure it takes up a good portion of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heroContentWrapper {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack columns on small screens */
+    gap: 40px; /* Space between columns */
+    align-items: center; /* Center items vertically when stacked */
+   
+  }
+  
+  /* Desktop layout: two columns */
+  @media (min-width: 768px) { /* md breakpoint */
+    .heroContentWrapper {
+      flex-direction: row; /* Side-by-side on larger screens */
+      justify-content: space-between;
+      text-align: left;
+      align-items: center;
+     
+    }
+  }
+  
+  .heroImageContainer {
+  
+    flex: 1; /* Allows image container to grow and shrink */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+    border-radius: 12px; /* Rounded corners for the image container */
+    overflow: hidden; /* Ensures image corners are also rounded */
+    box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.123); /* Subtle shadow */
+  }
+  
+  .heroImage {
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    border-radius: 12px; /* Apply rounded corners directly to the image */
+    object-fit: cover;
+  }
+  
+  .heroTextContent {
+   
+    flex: 1; /* Allows text content to grow and shrink */
+    padding: 20px; /* Inner padding for text */
+    text-align: center; /* Center text on mobile */
+    align-items: center;
+    justify-items: center;
+
+  }
+  
+  /* Align text to left on desktop */
+  @media (min-width: 768px) {
+    .heroTextContent {
+      text-align: left;
+    }
+  }
+  
+  .heroHeadline {
+    font-size: 2.5rem; /* Large, impactful heading */
+    font-weight: 700;
+    color: #333; /* Darker text for readability */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-align: center;
+    background: linear-gradient(to right, rgb(0, 0, 0),rgb(170, 170, 11));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+    
+  }
+  
+  .heroParagraph {
+    font-size: 1.15rem; /* Readable paragraph text */
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .heroCtaButton {
+    background: linear-gradient(to right, rgb(240, 241, 217),rgb(236, 236, 150));
+    color: #2c2e21;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px; /* Slightly more rounded button */
+    font-size: 1.4rem;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2); /* Button shadow */
+  
+  }
+  
+  .heroCtaButton:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 767px) {
+    .heroSection {
+      padding: 40px 15px; /* Reduce padding on smaller screens */
+    }
+  
+    .heroHeadline {
+      font-size: 2rem; /* Adjust font size for mobile */
+    }
+  
+    .heroParagraph {
+      font-size: 1rem;
+    }
+  
+    .heroCtaButton {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }
