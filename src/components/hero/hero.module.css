@@ -10,7 +10,7 @@
   }
   
   .heroContentWrapper {
-    max-width: 1200px; /* Max width for content */
+    max-width: 1600px; /* Max width for content */
     margin: 0 auto;
     display: flex;
     flex-direction: column; /* Stack columns on small screens */
