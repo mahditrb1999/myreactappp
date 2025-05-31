@@ -1,14 +1,18 @@
-
-
 /* Base styles for the header container */
 .header {
-  position: sticky;      /* sticky makes the navbar stick to the top */
-  top: 0;                /* position it at the top of the page */
+  z-index: 99;
+  position: sticky; /* sticky makes the navbar stick to the top */
+  top: 0; /* position it at the top of the page */
   padding: 10px 0;
- 
-  background: linear-gradient(to right, #f7f7ef, #f1eca2); /* from-gray-900 to-black */
+
+  background: linear-gradient(
+    to right,
+    #f7f7ef,
+    #f1eca2
+  ); /* from-gray-900 to-black */
   color: #fffdfd;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
   border-bottom-left-radius: 0.75rem; /* rounded-b-xl */
   border-bottom-right-radius: 0.75rem; /* rounded-b-xl */
   /* font-family: 'Inter', sans-serif; font-inter - *You'll need to import 'Inter' font in your global CSS or HTML for this to work.* */
@@ -24,11 +28,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1rem; /* p-4 */
-
 }
 
 /* Responsive padding for headerTop */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .headerTop {
     padding: 1.5rem 1.5rem; /* md:p-6 */
   }
@@ -41,7 +45,6 @@
   flex-shrink: 0;
   color: #ffffff;
   margin-right: 1.5rem; /* mr-6 */
-
 }
 
 /* Logo text styling */
@@ -57,7 +60,8 @@
 }
 
 /* Responsive font size for logo */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .logo {
     font-size: 1.875rem; /* md:text-3xl */
   }
@@ -69,7 +73,8 @@
 }
 
 /* Hide on desktop */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .mobileMenuButtonContainer {
     display: none;
   }
@@ -112,7 +117,8 @@
 }
 
 /* Show on desktop */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .desktopNav {
     display: flex; /* md:flex */
   }
@@ -138,7 +144,8 @@
 }
 
 /* Responsive font size for nav links */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .navLink {
     font-size: 1.125rem; /* md:text-lg */
   }
@@ -156,7 +163,8 @@
   border-radius: 9999px; /* rounded-full */
   color: #000000;
   margin-left: 1.5rem; /* ml-6 */
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out,
+    border-color 300ms ease-in-out;
   font-size: 1rem; /* text-base */
 }
 
@@ -167,7 +175,8 @@
 }
 
 /* Responsive font size for sign in button */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .signInButton {
     font-size: 1.125rem; /* md:text-lg */
   }
@@ -187,7 +196,8 @@
 }
 
 /* Hide mobile nav on desktop */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .mobileNav {
     display: none; /* md:hidden */
   }
@@ -224,7 +234,8 @@
   border-radius: 9999px; /* rounded-full */
   color: #ffffff;
   margin-top: 1rem; /* mt-4 */
-  transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out,
+    border-color 300ms ease-in-out;
   font-size: 1rem; /* text-base */
 }
 
@@ -248,7 +259,8 @@
 }
 
 /* Responsive padding and layout for headerBottom */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .headerBottom {
     padding: 0.75rem 1.5rem; /* md:px-6 */
     flex-direction: row; /* md:flex-row */
@@ -263,7 +275,8 @@
 }
 
 /* Responsive font size and margin for phone number */
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
+  /* md breakpoint */
   .phoneNumber {
     font-size: 1rem; /* md:text-base */
     margin-bottom: 0; /* md:mb-0 */
@@ -304,25 +317,25 @@
   height: 1.5rem; /* h-6 */
   width: 1.5rem; /* w-6 */
 }
-.navLinks a{
+.navLinks a {
   color: #000000;
   padding: 15px;
 }
 
-.mobileNavLinks{
+.mobileNavLinks {
   color: #000000;
   padding: 15px;
 }
 
 /* Reduced height of the top header on scroll */
 .headerTopScrolled {
-  padding: 10px 20px;  /* کاهش padding */
+  padding: 10px 20px; /* کاهش padding */
   height: 40px; /* کاهش ارتفاع */
 }
 
 /* Hide bottom header on scroll */
 .headerBottomHidden {
-  display: none;  
+  display: none;
   opacity: 0; /* محو شدن */
   visibility: hidden; /* مخفی شدن */
 }
@@ -335,10 +348,6 @@
 .headerBottom {
   opacity: 1; /* نمایش */
   visibility: visible; /* نمایش */
-  
-
-  
- 
 
   transition: opacity 1s ease, visibility 1s ease; /* تغییرات صاف در opacity و visibility */
 }
@@ -348,5 +357,3 @@
   opacity: 0; /* محو شدن */
   visibility: hidden; /* مخفی شدن */
 }
-
-
