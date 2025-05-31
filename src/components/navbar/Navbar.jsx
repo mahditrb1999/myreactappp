@@ -33,7 +33,7 @@ const App = () => {
         {/* Logo Section */}
         <div className={styles.logoContainer}>
           <a href="#" className={styles.logo}>
-           <img className='logot' src="/pics/logo.jpg" alt="" />
+           <img className={`${styles.logot} ${isScrolled ? styles.logotScrolled : ''}`} src="/pics/logo.jpg" alt="" />
           </a>
       
         </div>

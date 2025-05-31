@@ -2,7 +2,7 @@
 
 .heroSection {
     background-color: #f7f8f3; /* Light background for contrast */
-    padding: 60px 20px; /* Adjust padding as needed */
+    padding: 15px 5px; /* Adjust padding as needed */
     min-height: 70vh; /* Ensure it takes up a good portion of the viewport */
     display: flex;
     align-items: center;
@@ -128,4 +128,24 @@
   }
 
 
+  .heroContentWrapper {
+    display: flex;
+    flex-direction: row; /* دسکتاپ: عکس و متن کنار هم */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* فاصله بین دو ستون */
+  }
+  
+  /* برای موبایل: ستون و جابجایی ترتیب */
+  @media (max-width: 768px) {
+    .heroContentWrapper {
+      flex-direction: column; /* ستون */
+    }
+    .heroContentWrapper > div:first-child {
+      order: 2; /* عکس بیاد دوم */
+    }
+    .heroContentWrapper > div:last-child {
+      order: 1; /* متن بیاد اول */
+    }
+  }
   
