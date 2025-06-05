@@ -3,11 +3,11 @@ import React from 'react';
 // ایمپورت کامپوننت‌های بخش اصلی صفحه (مسیرها را بر اساس جایگاه HomePage.jsx تنظیم کنید)
 import Hero from '../components/hero/Hero';
 import NomineesSection from '../components/firstpart/NomineesSection';
-import WavyDivider from '../components/svg/WavyDivider';
-import WavyDividerInverted from '../components/svg/WavyDividerInverted'; // این رو هم اضافه کنید
+// import WavyDivider from '../components/svg/WavyDivider';
+import WavyDivider from '../components/svg/WavyDivider'; 
 import ImgRight from '../components/imgright/ImgRight';
-import ImgLeft from '../components/imgleft/ImgLeft'; // مسیر ImgLeft اصلاح شده نسبت به HomePage.jsx
-import FAQSection from '../components/faq/FAQSection';
+import ImgLeft from '../components/imgleft/ImgLeft'; 
+import FAQSection from '../components/faqsection/FAQSection';
 import CallToActionSection from '../components/cta/CallToActionSection';
 
 const HomePage = () => {
@@ -29,7 +29,7 @@ const HomePage = () => {
       />
 
       {/* بخش خدمات سئو (ImgLeft) */}
-      <WavyDividerInverted /> {/* <--- اینجا WavyDividerInverted اضافه شد */}
+     
       <ImgLeft
         id="seo-section" // ID برای اسکرول از NomineesSection
         heading="خدمات جامع سئو برای دیده شدن کسب و کار شما"

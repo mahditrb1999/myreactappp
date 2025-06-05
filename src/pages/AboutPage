@@ -1,0 +1,77 @@
+// src/pages/AboutPage.jsx
+import React from 'react';
+import styles from './AboutPage.module.css'; // برای استایل‌های این صفحه
+
+const AboutPage = () => {
+  return (
+    <div className={styles.pageContainer}>
+      <h1 className={styles.pageTitle}>درباره ما</h1>
+      <p className={styles.pageDescription}>
+        ما در TRBDEV، تیمی از متخصصان خلاق و باتجربه در زمینه طراحی وب‌سایت و بهینه‌سازی سئو هستیم که با شور و اشتیاق، به کسب‌وکارها کمک می‌کنیم تا در دنیای پرچالش دیجیتال بدرخشند.
+      </p>
+
+      {/* بخش: ماموریت و چشم‌انداز */}
+      <div className={styles.sectionBlock}>
+        <h2 className={styles.sectionTitle}>ماموریت و چشم‌انداز ما</h2>
+        <p className={styles.sectionText}>
+          ماموریت ما، ارائه راهکارهای دیجیتال نوآورانه و اختصاصی است که نه تنها نیازهای فعلی کسب‌وکارها را برآورده کند، بلکه آن‌ها را برای موفقیت‌های آینده در فضای آنلاین آماده سازد. ما به خلق وب‌سایت‌هایی باور داریم که فراتر از یک حضور آنلاین ساده، به ابزاری قدرتمند برای جذب مشتری، افزایش فروش و تقویت برند تبدیل شوند.
+        </p>
+      </div>
+
+      {/* بخش: ارزش‌های اصلی */}
+      <div className={styles.sectionBlock}>
+        <h2 className={styles.sectionTitle}>ارزش‌های اصلی</h2>
+        <ul className={styles.valuesList}>
+          <li>
+            <strong>نوآوری:</strong> همواره در جستجوی جدیدترین تکنولوژی‌ها و روندهای طراحی و سئو هستیم تا بهترین‌ها را ارائه دهیم.
+          </li>
+          <li>
+            <strong>تعهد:</strong> به اهداف مشتریانمان متعهدیم و تا رسیدن به نتیجه مطلوب، در کنار آن‌ها می‌مانیم.
+          </li>
+          <li>
+            <strong>کیفیت:</strong> در هر پروژه، بالاترین استانداردهای کیفی را در طراحی، کدنویسی و بهینه‌سازی رعایت می‌کنیم.
+          </li>
+          <li>
+            <strong>شفافیت:</strong> فرآیند کار را به صورت کاملاً شفاف با مشتریانمان در میان می‌گذاریم.
+          </li>
+          <li>
+            <strong>مشتری‌مداری:</strong> نیازها و خواسته‌های مشتریانمان را در اولویت قرار می‌دهیم و بر اساس آن، راهکار ارائه می‌کنیم.
+          </li>
+        </ul>
+      </div>
+
+      {/* بخش: چرا TRBDEV؟ (اختیاری) */}
+      <div className={styles.sectionBlock}>
+        <h2 className={styles.sectionTitle}>چرا TRBDEV بهترین انتخاب برای شماست؟</h2>
+        <p className={styles.sectionText}>
+          با سال‌ها تجربه در طراحی وب‌سایت‌های حرفه‌ای و موفقیت در بهبود رتبه سئو کسب‌وکارهای مختلف، TRBDEV با ترکیبی از تخصص، خلاقیت و تعهد به مشتری، شریک قابل اعتمادی برای رشد دیجیتال شماست. ما از اولین ایده تا پشتیبانی پس از راه‌اندازی، همراه شما خواهیم بود.
+        </p>
+      </div>
+
+      {/* بخش: معرفی تیم (اختیاری) - اگر می‌خواهید معرفی تیم هم داشته باشید */}
+      {/* <div className={styles.sectionBlock}>
+        <h2 className={styles.sectionTitle}>تیم ما</h2>
+        <div className={styles.teamGrid}>
+          <div className={styles.teamMember}>
+            <img src="/pics/team-member-1.jpg" alt="نام عضو تیم" className={styles.teamPhoto} />
+            <h3 className={styles.memberName}>نام و نام خانوادگی</h3>
+            <p className={styles.memberRole}>سمت شغلی (مثلاً: مدیر پروژه)</p>
+          </div>
+          <div className={styles.teamMember}>
+            <img src="/pics/team-member-2.jpg" alt="نام عضو تیم" className={styles.teamPhoto} />
+            <h3 className={styles.memberName}>نام و نام خانوادگی</h3>
+            <p className={styles.memberRole}>سمت شغلی (مثلاً: طراح ارشد)</p>
+          </div>
+           <div className={styles.teamMember}>
+            <img src="/pics/team-member-3.jpg" alt="نام عضو تیم" className={styles.teamPhoto} />
+            <h3 className={styles.memberName}>نام و نام خانوادگی</h3>
+            <p className={styles.memberRole}>سمت شغلی (مثلاً: متخصص سئو)</p>
+          </div>
+        </div>
+      </div> */}
+
+    </div>
+  );
+};
+
+export default AboutPage;
