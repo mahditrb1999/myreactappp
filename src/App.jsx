@@ -5,7 +5,9 @@ import NomineesSection from './components/firstpart/NomineesSection';
 import WavyDivider from './components/svg/WavyDivider'
 import ImgRight from './components/imgright/ImgRight';
 import ImgLeft from './components/ImgLeft/ImgLeft';
-
+import FAQSection from './components/FAQSection/FAQSection.jsx';
+import CallToActionSection from './components/cta/CallToActionSection';
+import Footer from './components/Footer/Footer'; // <--- ایمپورت فوتر
 function App() {
   return (
     <div>
@@ -44,6 +46,10 @@ function App() {
         imageUrl="/pics/wordpress.png" // مسیر عکس در پوشه public
         imageAlt="تصویر وردپرس با لوگوی TRBDEV"
       />
+      <FAQSection/>
+      <WavyDivider />
+      <CallToActionSection/>
+      <Footer/>
     </div>
   );
 }

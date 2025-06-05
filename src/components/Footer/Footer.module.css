@@ -1,0 +1,191 @@
+/* Footer.module.css */
+
+.footer {
+    background-color: #222; /* رنگ پس‌زمینه تیره برای فوتر */
+    color: #f0f0f0; /* رنگ متن روشن */
+    padding: 4rem 2rem 1.5rem; /* پدینگ بالا، چپ و راست، پایین */
+    font-family: 'Inter', sans-serif;
+    text-align: right; /* تراز راست برای کل فوتر */
+    direction: rtl; /* برای پشتیبانی بهتر از زبان فارسی */
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap; /* اجازه می‌دهد ستون‌ها در صفحه‌های کوچک روی هم قرار بگیرند */
+    justify-content: space-between; /* پخش شدن ستون‌ها با فاصله مناسب */
+    max-width: 1200px; /* حداکثر عرض محتوا */
+    margin: 0 auto; /* وسط‌چین کردن محتوا */
+    gap: 2rem; /* فاصله بین ستون‌ها */
+  }
+  
+  /* استایل ستون‌ها */
+  .colAbout,
+  .colLinks,
+  .colContact {
+    flex: 1; /* هر ستون فضای مساوی بگیرد */
+    min-width: 250px; /* حداقل عرض برای هر ستون تا بهم نریزد */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* استایل لوگو/نام شرکت */
+  .footerLogo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #eff15b; /* رنگ زرد/طلایی برای لوگو */
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  /* استایل متن معرفی کوتاه */
+  .aboutText {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #c0c0c0;
+  }
+  
+  /* استایل لینک‌های شبکه‌های اجتماعی */
+  .socialLinks {
+    display: flex;
+    gap: 1rem; /* فاصله بین آیکون‌ها */
+    justify-content: flex-end; /* آیکون‌ها راست‌چین شوند */
+  }
+  
+  .socialIcon {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcon:hover {
+    color: #eff15b; /* تغییر رنگ در هاور */
+  }
+  
+  /* استایل عنوان ستون‌ها (لینک‌های سریع، خدمات، تماس با ما) */
+  .colTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #eff15b; /* رنگ زرد/طلایی برای عنوان‌ها */
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* خط زیر عنوان */
+    padding-bottom: 0.5rem;
+    text-align: right; /* عنوان‌ها راست‌چین */
+  }
+  
+  /* استایل لیست‌های فوتر */
+  .footerList {
+    list-style: none; /* حذف نشانگر لیست */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footerList li {
+    margin-bottom: 0.7rem;
+  }
+  
+  .footerLink {
+    color: #c0c0c0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    display: flex; /* برای هم‌ترازی آیکون‌ها و متن */
+    align-items: center;
+    justify-content: flex-end; /* راست‌چین کردن آیتم‌های لیست */
+    gap: 0.5rem; /* فاصله بین آیکون و متن */
+  }
+  
+  .footerLink:hover {
+    color: #eff15b; /* تغییر رنگ در هاور */
+  }
+  
+  .footerLink i { /* برای آیکون‌های Font Awesome (اگر استفاده شود) */
+      font-size: 1.1rem;
+      color: #c0c0c0;
+  }
+  
+  
+  /* بخش کپی‌رایت پایین فوتر */
+  .bottomBar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط جداکننده */
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    text-align: center; /* متن کپی‌رایت وسط‌چین */
+    color: #a0a0a0;
+    font-size: 0.85rem;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 992px) {
+    .colAbout,
+    .colLinks,
+    .colContact {
+      min-width: 200px; /* کاهش حداقل عرض ستون‌ها */
+    }
+    .footerLogo {
+      font-size: 2rem;
+    }
+    .colTitle {
+      font-size: 1.1rem;
+    }
+    .footerList li {
+      margin-bottom: 0.6rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* ستون‌ها روی هم قرار می‌گیرند */
+      gap: 1.5rem;
+    }
+    .colAbout,
+    .colLinks,
+    .colContact {
+      min-width: unset; /* حداقل عرض حذف می‌شود */
+      width: 100%; /* هر ستون تمام عرض را می‌گیرد */
+      margin-bottom: 1rem;
+    }
+    .colAbout {
+      order: 1; /* بخش درباره ما اول باشد */
+    }
+    .colLinks {
+      order: 2; /* لینک‌ها دوم باشند */
+    }
+    .colContact {
+      order: 3; /* تماس با ما سوم باشد */
+    }
+    .socialLinks {
+      justify-content: flex-end; /* آیکون‌ها راست‌چین بمانند */
+    }
+    .colTitle {
+      font-size: 1.1rem;
+      text-align: right; /* عنوان‌ها راست‌چین بمانند */
+    }
+    .footerList li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      padding: 2.5rem 1rem 1rem;
+    }
+    .footerLogo {
+      font-size: 1.8rem;
+    }
+    .aboutText {
+      font-size: 0.85rem;
+    }
+    .colTitle {
+      font-size: 1rem;
+    }
+    .footerList li,
+    .footerLink {
+      font-size: 0.85rem;
+    }
+    .socialIcon {
+      font-size: 1.3rem;
+    }
+    .copyrightText {
+      font-size: 0.75rem;
+    }
+  }

@@ -1,0 +1,231 @@
+/* src/components/faq/FAQSection.module.css */
+
+/* src/components/faq/FAQSection.module.css */
+
+.faqSection {
+    /* font-family: 'Inter', sans-serif; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #f0f0f0; /* این رنگ به عنوان جایگزین اگر تصویر لود نشد یا برای ترکیب با ماسک */
+    color: #333;
+    text-align: right;
+    direction: rtl;
+  
+    /* --- استایل‌های بک‌گراند ثابت و بزرگ --- */
+    /* background-image به صورت inline در JSX اعمال می‌شود */
+    background-size: cover; /* تصویر کل فضای المنت رو بپوشونه */
+    background-position: center center; /* تصویر در مرکز قرار بگیره */
+    background-repeat: no-repeat; /* تصویر تکرار نشه */
+    background-attachment: fixed; /* <--- این مهمترین تغییر است: بک‌گراند در Viewport ثابت می‌شود */
+    
+    position: relative;
+    z-index: 1;
+  
+    /* --- اضافه شدن mask-image برای نرم کردن لبه بالایی بک‌گراند --- */
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,   /* کاملاً شفاف در بالا (تصویر محو می‌شود) */
+      rgba(255, 255, 255, 1) 15%, /* در 15% از بالا، کاملاً مات (تصویر کامل دیده می‌شود) */
+      rgba(255, 255, 255, 1) 100%  /* تا پایین کاملاً مات */
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 15%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  
+  /* ... بقیه کدهای FAQSection.module.css (شامل استایل‌های .overlay و .answerText و .answerTextVisible) ... */
+  /* کلاس .overlay - اگر می‌خواهید از آن به عنوان یک لایه شفاف رنگی روی بک‌گراند استفاده کنید */
+  /* اگر فقط mask-image می‌خواهید، این کلاس را کاملاً حذف کنید و از JSX هم div.overlay را حذف کنید. */
+  /* این کلاس در نسخه قبلی مشکل‌ساز بود. اگر از mask-image راضی هستید، این را حذف کنید. */
+  /* اگر می‌خواهید بک‌گراند تاریک‌تر یا روشن‌تر شود (بدون افکت فید لبه)، این را نگه دارید: */
+  .overlay { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* یک لایه سفید با 70% شفافیت روی کل تصویر */
+    z-index: -1; /* زیر محتوا قرار بگیره */
+  }
+  
+  .mainTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    color: #222;
+  }
+  
+  .starIcon {
+      width: 2rem;
+      height: 2rem;
+      color: #FFD700;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #555;
+  }
+  
+  .faqList {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faqItem {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    /* overflow: hidden; <--- در این سطح، برای آکاردئون نیازی نیست، مگر برای border-radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease; /* برای انیمیشن کلی آیتم (مثلاً در هاور) */
+  }
+  
+  .questionButton {
+    width: 100%;
+    background-color: #f4faa0;
+    color: #333;
+    padding: 1.2rem 1.5rem;
+    border: none;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .questionButton:hover {
+    background-color: #e0e24d;
+  }
+  
+  .toggleIcon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-left: 1rem;
+  }
+  
+  .answerText {
+    padding: 0 1.5rem; /* Only horizontal padding when closed */
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    border-top: 1px solid #eee;
+    margin-top: 0; /* Remove any top margin */
+    margin-bottom: 0; /* Remove any bottom margin */
+    text-align: right;
+   
+    /* --- استایل‌های اصلی برای پنهان کردن پاسخ (بسیار مهم) --- */
+    max-height: 0; /* <--- ارتفاع را صفر می‌کند */
+    overflow: hidden; /* <--- محتوای اضافی را پنهان می‌کند */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out, opacity 0.3s ease-in-out; /* <--- انیمیشن نرم */
+    opacity: 0; /* <--- پنهان کردن محتوا در حالت بسته */
+    pointer-events: none; /* <--- جلوگیری از تعامل با محتوای پنهان */
+   }
+   
+   .answerTextVisible {
+    max-height: 500px; /* <--- مقدار بزرگتر از حداکثر ارتفاع محتوای پاسخ را بدهید */
+    padding: 1rem 1.5rem 1.5rem; /* Restore all padding when open */
+    opacity: 1; /* <--- نمایش کامل محتوا */
+    pointer-events: auto; /* <--- اجازه تعامل با محتوای باز شده */
+   }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 992px) {
+    .mainTitle {
+      font-size: 2.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .faqList {
+      max-width: 700px;
+    }
+    .questionButton {
+      font-size: 1rem;
+      padding: 1rem 1.2rem;
+    }
+    .answerText {
+      padding: 0 1.2rem 1.2rem;
+    }
+    .answerTextVisible {
+      padding-top: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .faqSection {
+      padding: 3rem 1rem;
+    }
+    .mainTitle {
+      font-size: 2.2rem;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .faqList {
+      max-width: 100%;
+    }
+    .questionButton {
+      font-size: 0.95rem;
+      padding: 0.9rem 1rem;
+    }
+    .toggleIcon {
+      font-size: 1.3rem;
+      margin-left: 0.8rem;
+    }
+    .answerText {
+      padding: 0 1rem 1rem;
+    }
+    .answerTextVisible {
+      padding-top: 0.7rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .faqSection {
+      padding: 2rem 0.5rem;
+    }
+    .mainTitle {
+      font-size: 1.8rem;
+    }
+    .starIcon {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+    .subtitle {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .questionButton {
+      font-size: 0.85rem;
+      padding: 0.8rem 0.8rem;
+    }
+    .toggleIcon {
+      font-size: 1.1rem;
+      margin-left: 0.6rem;
+    }
+    .answerText {
+      font-size: 0.8rem;
+      padding: 0.6rem 0.8rem 0.8rem;
+    }
+    .answerTextVisible {
+      padding-top: 0.6rem;
+    }
+  }

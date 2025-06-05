@@ -1,0 +1,101 @@
+/* CallToActionSection.module.css */
+
+.ctaSection {
+    /* font-family: 'Inter', sans-serif; */
+    padding: 5rem 2rem; /* پدینگ بالا/پایین بیشتر برای برجسته‌سازی */
+    background-color: #f6eba9; /* یک رنگ تیره برای کنتراست (می‌توانید تغییر دهید) */
+    color: rgb(51, 58, 10);
+    text-align: center;
+    direction: rtl; /* برای فارسی */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding-bottom: 5rem;
+  }
+  
+  .container {
+    max-width: 800px; /* عرض حداکثری برای محتوا */
+    margin: 0 auto;
+  }
+  
+  .ctaHeading {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #323308; /* رنگ زرد برجسته برای هدینگ */
+  }
+  
+  .ctaParagraph {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 2.5rem;
+    color: #464d0b;
+  }
+  
+  .ctaButton {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #eff15b; /* رنگ زرد برای دکمه */
+    color: #222; /* متن تیره روی دکمه روشن */
+    text-decoration: none;
+    border-radius: 50px; /* دکمه گرد */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* سایه برای برجسته‌سازی */
+  }
+  
+  .ctaButton:hover {
+    background-color: #e0e24d; /* کمی تیره‌تر در هاور */
+    transform: translateY(-3px); /* کمی بالا رفتن در هاور */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 992px) {
+    .ctaHeading {
+      font-size: 2.5rem;
+    }
+    .ctaParagraph {
+      font-size: 1.1rem;
+    }
+    .ctaButton {
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ctaSection {
+      padding: 4rem 1.5rem;
+    }
+    .ctaHeading {
+      font-size: 2rem;
+    }
+    .ctaParagraph {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .ctaButton {
+      padding: 0.8rem 2rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ctaSection {
+      padding: 3rem 1rem;
+    }
+    .ctaHeading {
+      font-size: 1.8rem;
+    }
+    .ctaParagraph {
+      font-size: 0.9rem;
+    }
+    .ctaButton {
+      font-size: 0.9rem;
+      padding: 0.7rem 1.8rem;
+    }
+  }
