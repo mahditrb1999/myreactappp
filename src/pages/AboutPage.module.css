@@ -1,92 +1,329 @@
 /* src/pages/AboutPage.module.css */
 .pageContainer {
-    min-height: 80vh; /* حداقل ارتفاع برای اینکه فوتر به بالا نچسبه */
-    padding: 4rem 2rem;
-    text-align: right; /* راست‌چین کردن متن */
+    min-height: 80vh;
+    padding: 0; /* پدینگ‌ها در بخش‌های داخلی کنترل می‌شوند */
+    text-align: right;
     direction: rtl;
     font-family: 'Inter', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #ffffff; /* پس‌زمینه سفید کلی */
     color: #333;
+  }
+  
+  /* استایل بخش معرفی/قهرمان */
+  .aboutHero {
+    background-color: #f8f8f8; /* پس‌زمینه روشن‌تر برای هیرو */
+    padding: 5rem 2rem;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
   }
   
   .pageTitle {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #222;
     margin-bottom: 1.5rem;
-    border-right: 8px solid #eff15b; /* خط زرد کناری عنوان */
-    padding-right: 20px;
     line-height: 1.2;
-    text-align: right; /* راست‌چین کردن عنوان */
+    font-weight: 800;
+    border-right: none; /* خط کنار عنوان در اینجا حذف می‌شود */
+    padding-right: 0;
   }
   
-  .pageDescription {
-    font-size: 1.15rem;
+  .heroDescription {
+    font-size: 1.25rem;
     line-height: 1.8;
     max-width: 900px;
+    margin: 0 auto;
+    color: #555;
   }
   
-  .sectionBlock {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* سایه ملایم */
+  /* --- بخش "ماموریت ما" --- */
+  .missionSection {
+    display: flex;
+    flex-direction: row; /* متن چپ، عکس راست */
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
+  .missionContent {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+  
+  .missionImageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+  }
+  
+  .missionImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* برای عکس گرد مانند نمونه UI */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* سایه برجسته */
+    object-fit: cover;
+    width: 400px; /* سایز ثابت برای عکس گرد */
+    height: 400px; /* سایز ثابت برای عکس گرد */
+  }
+  
+  /* --- بخش "داستان ما" --- */
+  .storySection {
+    display: flex;
+    flex-direction: row-reverse; /* عکس چپ، متن راست */
+    align-items: center;
+    gap: 4rem;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f8f8; /* پس‌زمینه کمی متفاوت */
+  }
+  
+  .storyContent {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+  }
+  
+  .storyImageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+  }
+  
+  .storyImage, .storyVideo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  
+  /* استایل‌های مشترک برای عناوین بخش‌ها */
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #222;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #eee; /* خط پایین عنوان بخش */
-    padding-bottom: 0.8rem;
     text-align: right;
+    font-weight: 700;
+    line-height: 1.2;
   }
   
   .sectionText {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.8;
     color: #555;
-    text-align: justify; /* متن justify */
+    text-align: justify;
+  }
+  
+  /* --- بخش "ارزش‌های اصلی" --- */
+  .valuesSection {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+  
+  .valuesSection .sectionTitle { /* عنوان بخش ارزش‌ها */
+    text-align: center; /* عنوان ارزش‌ها وسط‌چین */
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid #eee; /* خط زیر عنوان */
+    padding-bottom: 1rem;
   }
   
   .valuesList {
-    list-style: none; /* حذف نشانه‌های لیست */
+    list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* برای چیدن افقی آیتم‌ها */
-    flex-wrap: wrap; /* شکستن به خط بعد در صورت کمبود فضا */
-    gap: 1rem; /* فاصله بین آیتم‌ها */
-    justify-content: space-between; /* توزیع مساوی فضا بین آیتم‌ها */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* گرید واکنش‌گرا */
+    gap: 2rem; /* فاصله بین آیتم‌ها */
   }
   
   .valuesList li {
-    flex: 1 1 300px; /* هر آیتم حداقل 300px عرض داشته باشد */
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
     text-align: right;
+    background-color: #fdfdfd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-right: 35px; /* فضا برای آیکون */
   }
   
-  .valuesList strong {
-    color: #222; /* رنگ قوی‌تر برای عنوان ارزش */
-    font-weight: 600;
+  .valuesList li::before {
+    content: '✓';
+    color: #eff15b;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 1.5rem;
+    font-size: 1.2rem;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .pageContainer {
-      padding: 2rem 1rem;
-    }
+  .valuesList li strong {
+    color: #222;
+    font-weight: 700;
+    display: block; /* عنوان ارزش‌ها در یک خط جدید */
+    margin-bottom: 0.5rem;
+  }
+  
+  /* --- بخش "تیم ما" (اگر فعال شود) --- */
+  .teamSection {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+  }
+  
+  .teamSection .sectionTitle {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+  }
+  
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .teamMember {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .teamPhoto {
+    width: 150px; /* سایز بزرگتر عکس تیم */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid #eff15b; /* بوردر زرد */
+  }
+  
+  .memberName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.3rem;
+  }
+  
+  .memberRole {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 992px) {
     .pageTitle {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+    }
+    .heroDescription {
+      font-size: 1.1rem;
+    }
+    .missionSection,
+    .storySection {
+      flex-direction: column; /* ستون‌ها روی هم */
+      gap: 2.5rem;
+      padding: 3rem 1.5rem;
+    }
+    .missionContent,
+    .storyContent,
+    .missionImageContainer,
+    .storyImageContainer {
+      min-width: unset;
+      width: 100%; /* عرض کامل */
+    }
+    .missionImage {
+      width: 300px; /* سایز کوچکتر برای موبایل */
+      height: 300px;
+    }
+    .sectionTitle {
+      font-size: 2rem;
+      text-align: center; /* عنوان‌ها وسط‌چین در موبایل */
+    }
+    .sectionText {
+      text-align: right; /* متن justify حذف شد */
+    }
+    .valuesList {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .valuesList li {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .pageTitle {
+      font-size: 2.2rem;
+    }
+    .heroDescription {
+      font-size: 1rem;
+    }
+    .missionSection,
+    .storySection,
+    .valuesSection,
+    .teamSection {
+      padding: 2.5rem 1rem;
     }
     .sectionTitle {
       font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
-    .valuesList {
-      flex-direction: column; /* آیتم‌ها زیر هم چیده شوند */
-      align-items: flex-start; /* تراز راست */
+    .sectionText {
+      font-size: 0.9rem;
+    }
+    .valuesList li {
+      font-size: 0.85rem;
+      padding-right: 30px;
+    }
+    .valuesList li strong {
+      font-size: 0.95rem;
+    }
+    .teamPhoto {
+      width: 100px;
+      height: 100px;
+    }
+    .memberName {
+      font-size: 1.05rem;
+    }
+    .memberRole {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .pageTitle {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .heroDescription {
+      font-size: 0.9rem;
+    }
+    .sectionTitle {
+      font-size: 1.5rem;
+    }
+    .missionImage {
+      width: 250px;
+      height: 250px;
+    }
+    .teamPhoto {
+      width: 80px;
+      height: 80px;
     }
   }
