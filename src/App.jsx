@@ -8,8 +8,8 @@ import Footer from './components/footer/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
-import AboutPage from './pages/AboutPage';
 
+import AboutPage from './pages/AboutPage';
 function App() {
   return (
     <Router>
