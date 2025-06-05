@@ -18,3 +18,20 @@ body {
   direction: rtl; /* اگر می‌خوای متن راست‌چین باشه */
 }
 
+.tbtn{
+  background-color: rgb(226, 236, 165);
+  border: none;
+  padding: 6px;
+  width: 100px;
+  box-shadow: 5px 5px 12px rgba(20, 36, 1, 0.1);
+ border-radius: 10px;
+ font-size: larger;
+ margin: 20px;  
+ margin-top: 35px;
+    }
+    .tbtn:hover{
+      background-color: rgb(213, 219, 130);
+     cursor: pointer;
+        }
+
+      

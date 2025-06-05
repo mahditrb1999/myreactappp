@@ -1,0 +1,160 @@
+/* ImgRight.module.css */
+
+.imgRightSection {
+    padding: 4rem 2rem; /* Consistent padding for the section */
+    background-color: #fff; /* A neutral background */
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Default: text on left, image on right */
+    align-items: center; /* Vertically align items in the middle */
+    gap: 3rem; /* Space between text and image */
+    max-width: 1200px; /* Max width for content, adjust as needed */
+    margin: 0 auto; /* Center the container */
+}
+
+/* استایل دکمه (مستقل) - به ImgRight.jsx اضافه شده بود */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: #e5ff0077;
+    color: rgb(58, 59, 11);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #eff15b;
+}
+
+/* h2 عمومی حذف شد.
+    استایل‌های h2 و p به صورت اختصاصی برای .textContent h2 و .textContent p تنظیم می‌شوند.
+*/
+
+.textContent {
+    flex: 1;
+    /* padding-right: 2rem; <--- حذف شد */
+    text-align: right; /* <--- متن راست‌چین */
+    padding: 0 1rem; /* <--- پدینگ جدید: 0 بالا/پایین، 1rem چپ/راست برای دسکتاپ */
+}
+
+.textContent h2 { /* فقط از این سلکتور استفاده کنید */
+    border-right: 8px solid #eff15b; /* <--- بوردر سمت راست */
+    padding-right: 20px; /* <--- پدینگ سمت راست بوردر */
+    font-size: 2.5rem; /* <--- اندازه فونت برای دسکتاپ */
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.5; /* <--- Line-height بهینه شده */
+}
+
+.textContent p {
+    font-size: 1.1rem; /* <--- اندازه فونت برای دسکتاپ */
+    color: #555;
+    line-height: 2; /* <--- Line-height بهینه شده */
+    margin-bottom: 1.5rem; /* <--- فاصله از دکمه */
+}
+
+/* --- استایل برای وسط‌چین کردن دکمه --- */
+.buttonContainer { /* یک کلاس جدید برای نگهداری دکمه */
+    text-align: center; /* <--- دکمه همیشه وسط‌چین */
+}
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* برای تبلت‌ها و دسکتاپ‌های کوچک‌تر */
+    .container {
+        gap: 2rem;
+    }
+    .textContent {
+        padding: 0 0.8rem; /* <--- پدینگ کمتر برای تبلت */
+    }
+    .textContent h2 {
+        font-size: 2.1rem; /* <--- کاهش فونت هدینگ برای تبلت */
+        line-height: 1.2;
+    }
+    .textContent p {
+        font-size: 1rem; /* <--- کاهش فونت پاراگراف برای تبلت */
+        line-height: 1.6;
+    }
+    .button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) { /* برای موبایل */
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        padding: 2rem 1rem; /* <--- پدینگ کلی کانتینر در موبایل کمی کمتر شد */
+    }
+
+    .textContent {
+        padding: 1.5rem 0.5rem; /* <--- پدینگ برای متن در موبایل: بالا/پایین 1.5rem، چپ/راست 0.5rem */
+        padding-bottom: 2rem; /* <--- فضای پایین متن وقتی روی هم قرار می‌گیرند */
+        order: 2; /* Ensure text appears before image on mobile */
+        text-align: right; /* <--- همچنان راست‌چین در موبایل */
+    }
+
+    .textContent h2 {
+        font-size: 1.8rem; /* <--- کاهش فونت هدینگ برای موبایل */
+        line-height: 1.2;
+        border-right: 6px solid #eff15b; /* <--- کاهش ضخامت بوردر در موبایل */
+        padding-right: 15px;
+    }
+
+    .textContent p {
+        font-size: 0.95rem; /* <--- کاهش فونت پاراگراف برای موبایل */
+        line-height: 1.6;
+    }
+
+    .buttonContainer {
+        text-align: center; /* <--- دکمه در موبایل هم وسط‌چین */
+    }
+
+    .imageContainer {
+        order: 1; /* Ensure image appears above text on mobile */
+        margin-bottom: 2rem; /* <--- فاصله بین عکس و متن وقتی روی هم قرار می‌گیرند */
+    }
+}
+
+@media (max-width: 480px) { /* برای موبایل‌های کوچکتر (اختیاری) */
+    .imgRightSection {
+        padding: 1.5rem 0.5rem; /* <--- پدینگ کلی بخش کمتر شد */
+    }
+    .container {
+        padding: 1.5rem 0.5rem; /* <--- پدینگ کلی کانتینر در موبایل خیلی کوچک کمتر شد */
+    }
+    .textContent {
+        padding: 1rem 0.25rem; /* <--- پدینگ برای متن در موبایل خیلی کوچک کمتر شد */
+    }
+    .textContent h2 {
+        font-size: 1.5rem;
+        border-right: 4px solid #eff15b;
+        padding-right: 10px;
+    }
+    .textContent p {
+        font-size: 0.85rem;
+    }
+    .button {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
+}

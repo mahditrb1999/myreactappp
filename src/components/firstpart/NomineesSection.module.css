@@ -1,0 +1,169 @@
+/* Base styles for the section */
+.nomineesSection {
+  /* font-family: 'Inter', sans-serif;  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  background-color: #f8f8f8; /* Light off-white background */
+  color: #333; /* Dark text color */
+}
+
+/* Main title styling */
+.mainTitle {
+  font-size: 3rem; /* Large font size */
+  font-weight: 800; /* Extra bold */
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between text and star icon */
+  text-transform: uppercase; /* Uppercase as in the image */
+}
+
+/* Star icon styling */
+.starIcon {
+  width: 2rem; /* Size of the star */
+  height: 2rem;
+  color: #FFD700; /* Gold color for the star */
+}
+
+/* Subtitle styling */
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Container for the nominee cards */
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  justify-content: center;
+  gap: 2rem; /* Space between cards */
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1200px; /* Max width for the card container */
+}
+
+/* Individual nominee card styling */
+.nomineeCard {
+  background-color: #f8f5e7; /* Beige background for cards */
+  border-radius: 0.75rem; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%; /* Full width on small screens */
+  max-width: 320px; /* Max width for individual cards */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.nomineeCard:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+
+/* Card image styling */
+.cardImage {
+  width: 100%; /* Image takes full width of the card padding */
+  height: auto;
+  border-radius: 0.5rem; /* Rounded corners for images */
+  margin-bottom: 1rem;
+}
+
+/* Card title styling */
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+/* Card details styling */
+.cardDetails {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* --- استایل دکمه "ادامه" (که قبلا tbtn بود) --- */
+.button { /* این کلاس حالا برای دکمه های داخل کارت استفاده می شود */
+  background-color: #e6ee9b; /* رنگ آبی که قبلا برای دکمه ها استفاده می‌شد */
+  color: rgb(58, 61, 7);
+  padding: 0.8rem 1.8rem;
+  border: none; /* دکمه‌های ادامه معمولاً بدون بوردر هستند */
+  border-radius: 5px; /* گوشه‌های گرد */
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem; /* فاصله از متن بالا */
+  text-decoration: none; /* برای اطمینان از حذف زیرخط اگر تگ a بود */
+}
+
+.button:hover {
+  background-color: #fafc8d; /* تیره تر در هاور */
+}
+
+/* View Nominees button styling */
+.viewNomineesButton {
+  background-color: #f1eb90; /* Dark background */
+  color: #353405; /* White text */
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem; /* More rounded pill shape */
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.viewNomineesButton:hover {
+  background-color: #b9b332; /* Slightly lighter on hover */
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mainTitle {
+      font-size: 2.5rem;
+  }
+
+  .subtitle {
+      font-size: 1rem;
+  }
+
+  .cardsContainer {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+      align-items: center;
+  }
+
+  .nomineeCard {
+      width: 90%; /* Adjust width for better mobile fit */
+      max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+      font-size: 2rem;
+  }
+
+  .subtitle {
+      font-size: 0.9rem;
+  }
+
+  .nomineesSection {
+      padding: 2rem 0.5rem;
+  }
+}

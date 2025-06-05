@@ -1,0 +1,154 @@
+/* ImgLeft.module.css */
+
+.imgLeftSection {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.textContent {
+    flex: 1;
+    /* padding-left: 2rem; <--- این خط حذف شد تا پدینگ از container بگیره یا در media query تنظیم بشه */
+    text-align: right; /* <-- هدینگ و پاراگراف راست‌چین می‌مونن */
+    padding: 0 1rem; /* <--- پدینگ جدید: 0 از بالا و پایین، 1rem از چپ و راست برای دسکتاپ */
+}
+
+.textContent h2 {
+    border-right: 8px solid #eff15b;
+    padding-right: 20px;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.textContent p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+}
+
+.buttonContainer {
+    text-align: center; /* <--- دکمه همیشه وسط‌چین */
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: #e5ff0077;
+    color: rgb(58, 59, 11);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #eff15b;
+}
+
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .container {
+        gap: 2rem;
+    }
+    .textContent {
+        padding: 0 0.8rem; /* <--- پدینگ کمتر برای تبلت */
+    }
+    .textContent h2 {
+        font-size: 2.1rem;
+        line-height: 1.2;
+    }
+    .textContent p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 2rem 1rem; /* <--- پدینگ کلی کانتینر در موبایل کمی کمتر شد */
+    }
+
+    .textContent {
+        padding: 1.5rem 0.5rem; /* <--- پدینگ برای متن در موبایل: بالا و پایین 1.5rem، چپ و راست 0.5rem */
+        order: 2;
+        text-align: right;
+    }
+
+    .textContent h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        border-right: 6px solid #eff15b;
+        padding-right: 15px;
+    }
+
+    .textContent p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .buttonContainer {
+        text-align: center;
+    }
+
+    .imageContainer {
+        order: 1;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgLeftSection {
+        padding: 1.5rem 0.5rem; /* <--- پدینگ کلی بخش کمتر شد */
+    }
+    .container {
+        padding: 1.5rem 0.5rem; /* <--- پدینگ کلی کانتینر در موبایل خیلی کوچک کمتر شد */
+    }
+    .textContent {
+        padding: 1rem 0.25rem; /* <--- پدینگ برای متن در موبایل خیلی کوچک کمتر شد */
+    }
+    .textContent h2 {
+        font-size: 1.5rem;
+        border-right: 4px solid #eff15b;
+        padding-right: 10px;
+    }
+    .textContent p {
+        font-size: 0.85rem;
+    }
+    .button {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
