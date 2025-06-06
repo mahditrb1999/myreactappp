@@ -69,7 +69,7 @@ const Navbar = () => { // Renamed from 'App' to 'Navbar'
         <nav className={styles.desktopNav}>
           <div className={styles.navLinks}>
             <Link to="/" className={styles.navLink}> خانه </Link>
-            <Link to="/services" className={styles.navLink}> خدمات </Link>
+            <Link to="/services" className={styles.navLink}>   طراحی سایت</Link>
             <Link to="/about" className={styles.navLink}> درباره ما </Link>
             <Link to="/contact" className={styles.navLink}> ارتباط با ما </Link>
           </div>
@@ -87,7 +87,7 @@ const Navbar = () => { // Renamed from 'App' to 'Navbar'
       >
         <div className={styles.mobileNavLinks}>
           <Link to="/" className={styles.mobileNavLink}> خانه </Link>
-          <Link to="/services" className={styles.mobileNavLink}> خدمات </Link>
+          <Link to="/services" className={styles.mobileNavLink}> طراحی سایت</Link>
           <Link to="/about" className={styles.mobileNavLink}> درباره ما </Link>
           <Link to="/contact" className={styles.mobileNavLink}> ارتباط با ما </Link>
           <Link to="/signup" className={styles.mobileSignInButton}> ثبت نام </Link>

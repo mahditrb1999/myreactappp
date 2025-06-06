@@ -1,0 +1,93 @@
+/* src/components/about/AboutPageBanner.module.css */
+
+.bannerSection {
+    width: 100%;
+    height: 300px; /* <--- ارتفاع کم بنر (می‌توانید تنظیم کنید) */
+    background-color: #1a2b3c; /* رنگ جایگزین تا تصویر لود شود */
+    background-image: url('/pics/team_banner.png'); /* <--- مسیر تصویر بنر شما */
+    background-size: cover; /* تصویر کل بنر را بپوشاند */
+    background-position: center center; /* تصویر در مرکز قرار بگیرد */
+    background-repeat: no-repeat; /* تصویر تکرار نشود */
+    display: flex;
+    justify-content: center; /* محتوا وسط‌چین */
+    align-items: center; /* محتوا وسط‌چین */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* برای کنترل هرگونه عنصر اضافی */
+    color: white; /* رنگ متن روی بنر */
+    font-family: 'Inter', sans-serif;
+    direction: rtl;
+  }
+  
+  /* افزودن یک لایه روی بنر برای خوانایی بهتر متن (اختیاری) */
+  .bannerSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* لایه تیره با 40% شفافیت */
+    z-index: 1;
+  }
+  
+  .bannerContent {
+    position: relative;
+    z-index: 2; /* محتوا بالای لایه قرار بگیرد */
+    max-width: 800px;
+    padding: 0 1rem;
+  }
+  
+  .bannerTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #eff15b; /* رنگ زرد برجسته */
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(239, 241, 91, 0.6); /* درخشش نئونی */
+  }
+  
+  .bannerSubtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #b0c4de;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .bannerSection {
+      height: 250px;
+    }
+    .bannerTitle {
+      font-size: 2.8rem;
+    }
+    .bannerSubtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bannerSection {
+      height: 200px;
+      padding: 0 0.5rem;
+    }
+    .bannerTitle {
+      font-size: 2rem;
+    }
+    .bannerSubtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bannerSection {
+      height: 150px;
+    }
+    .bannerTitle {
+      font-size: 1.5rem;
+    }
+    .bannerSubtitle {
+      font-size: 0.9rem;
+    }
+  }

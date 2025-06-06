@@ -1,0 +1,157 @@
+/* src/components/services/ServicePlanSection.module.css */
+
+.planCard {
+    flex: 0 0 30%; /* هر کارت حدود 30% عرض کانتینر را بگیرد */
+    max-width: 380px; /* حداکثر عرض برای هر کارت */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* سایه واضح‌تر */
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem; /* فاصله بین کارت‌ها در گرید */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eee; /* بوردر ملایم */
+  }
+  
+  .planCard:hover {
+    transform: translateY(-15px); /* کمی بیشتر بالا رفتن در هاور */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .planIcon {
+      width: 60px; /* سایز آیکون */
+      height: 60px;
+      margin-bottom: 1rem;
+      object-fit: contain;
+  }
+  
+  .planTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 0.8rem;
+  }
+  
+  .planDescription {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* برای اینکه توضیحات فضای لازم را بگیرند */
+  }
+  
+  .priceContainer {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ddd; /* خط جداکننده زیر قیمت */
+    width: 100%;
+  }
+  
+  .planPrice {
+    font-size: 2.5rem;
+    font-weight: 900;
+    /* رنگ از prop themeColor می‌آید */
+  }
+  
+  .planFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: right;
+    width: 100%;
+  }
+  
+  .planFeatures li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.8rem;
+  }
+  
+  .featureIcon {
+    width: 20px;
+    height: 20px;
+    color: #28a745; /* رنگ سبز ثابت برای تیک */
+    flex-shrink: 0;
+  }
+  
+  .planButton {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    color: white; /* رنگ متن دکمه */
+    text-decoration: none;
+    border-radius: 50px; /* دکمه گرد */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    /* رنگ بک‌گراند این دکمه از prop themeColor می‌آید */
+  }
+  
+  .planButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.1); /* کمی روشن‌تر شود در هاور */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+    .planCard {
+      flex: 0 0 300px; /* کمی کوچکتر در دسکتاپ‌های کوچکتر */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .planCard {
+      flex: 0 0 45%; /* دو ستون در تبلت */
+      max-width: 400px;
+    }
+    .planTitle {
+      font-size: 1.8rem;
+    }
+    .planPrice {
+      font-size: 2.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .planCard {
+      flex: 0 0 90%; /* یک ستون در موبایل */
+      max-width: 350px;
+      padding: 1.5rem;
+    }
+    .planTitle {
+      font-size: 1.5rem;
+    }
+    .planPrice {
+      font-size: 1.8rem;
+    }
+    .planButton {
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .planCard {
+      padding: 1.2rem;
+    }
+    .planTitle {
+      font-size: 1.3rem;
+    }
+    .planPrice {
+      font-size: 1.5rem;
+    }
+    .planFeatures li {
+      font-size: 0.85rem;
+    }
+  }

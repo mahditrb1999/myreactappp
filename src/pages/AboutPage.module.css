@@ -1,56 +1,88 @@
-/* src/pages/AboutPage.module.css */
+/* src/pages/AboutPage.module.css - نسخه جدید: Techy & Bold */
 .pageContainer {
     min-height: 80vh;
     padding: 0; /* پدینگ‌ها در بخش‌های داخلی کنترل می‌شوند */
     text-align: right;
     direction: rtl;
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff; /* پس‌زمینه سفید کلی */
-    color: #333;
+    font-family: 'Inter', sans-serif; /* فونت Inter برای حس مدرن مناسب است */
+    background-color: #0d1a26; /* پس‌زمینه اصلی تیره و عمیق */
+    color: #e0e0e0; /* رنگ متن اصلی روشن */
   }
   
-  /* استایل بخش معرفی/قهرمان */
+  /* استایل بخش معرفی/قهرمان صفحه درباره ما */
   .aboutHero {
-    background-color: #f8f8f8; /* پس‌زمینه روشن‌تر برای هیرو */
-    padding: 5rem 2rem;
+    background-color: #1a2b3c; /* پس‌زمینه کمی روشن‌تر از کانتینر اصلی */
+    padding: 7rem 2rem; /* پدینگ بیشتر برای فضای خالی */
     text-align: center;
-    max-width: 1200px;
+    max-width: 100%; /* عرض کامل برای این بخش */
     margin: 0 auto;
+    position: relative; /* برای افکت‌های بک‌گراند */
+    overflow: hidden; /* برای کنترل جزئیات خارج از محدوده */
+    /* می‌توانید اینجا یک background-image با خطوط نئونی یا اشکال هندسی اضافه کنید */
+    /* background-image: url('/pics/tech-bg-hero.png'); */
+    background-size: cover;
+    background-position: center;
   }
   
   .pageTitle {
-    font-size: 3.5rem;
-    color: #222;
+    font-size: 4.5rem; /* بسیار بزرگ و جسورانه */
+    color: #eff15b; /* رنگ زرد نئونی برای عنوان اصلی */
     margin-bottom: 1.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-    border-right: none; /* خط کنار عنوان در اینجا حذف می‌شود */
-    padding-right: 0;
+    line-height: 1.1;
+    font-weight: 900; /* فوق‌العاده پررنگ */
+    text-transform: uppercase; /* حروف بزرگ برای تاثیر بیشتر */
+    letter-spacing: 2px; /* فاصله بین حروف */
+    text-shadow: 0 0 10px rgba(239, 241, 91, 0.6); /* درخشش نئونی */
   }
   
   .heroDescription {
-    font-size: 1.25rem;
-    line-height: 1.8;
+    font-size: 1.4rem;
+    line-height: 1.7;
     max-width: 900px;
     margin: 0 auto;
-    color: #555;
+    color: #b0c4de; /* آبی-خاکستری روشن برای متن */
+    font-weight: 300; /* وزن سبک‌تر برای خوانایی */
+  }
+  
+  /* --- استایل‌های مشترک برای عناوین بخش‌ها (تغییرات کلی) --- */
+  .sectionTitle {
+    font-size: 3.2rem; /* بزرگتر و تاثیرگذارتر */
+    color: #eff15b; /* رنگ زرد نئونی برای عناوین بخش‌ها */
+    margin-bottom: 2rem;
+    text-align: right;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(239, 241, 91, 0.4); /* درخشش نئونی */
+    border-bottom: 3px solid #3a4b5d; /* خط تیره زیر عنوان */
+    padding-bottom: 0.8rem;
+  }
+  
+  .sectionText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #c0d0e0; /* خاکستری-آبی روشن برای متن‌های طولانی‌تر */
+    text-align: justify;
   }
   
   /* --- بخش "ماموریت ما" --- */
   .missionSection {
     display: flex;
-    flex-direction: row; /* متن چپ، عکس راست */
+    flex-direction: row;
     align-items: center;
-    gap: 4rem;
-    padding: 5rem 2rem;
+    gap: 6rem;
+    padding: 6rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #0d1a26; /* پس‌زمینه تیره */
   }
   
   .missionContent {
     flex: 1;
     min-width: 300px;
     text-align: right;
+    padding-right: 20px; /* برای فضای بین متن و بوردر محتمل */
   }
   
   .missionImageContainer {
@@ -64,11 +96,10 @@
   .missionImage {
     max-width: 100%;
     height: auto;
-    border-radius: 50%; /* برای عکس گرد مانند نمونه UI */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* سایه برجسته */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(239, 241, 91, 0.3); /* سایه عمیق با درخشش زرد */
     object-fit: cover;
-    width: 400px; /* سایز ثابت برای عکس گرد */
-    height: 400px; /* سایز ثابت برای عکس گرد */
+    border: 2px solid #eff15b; /* بوردر نئونی */
   }
   
   /* --- بخش "داستان ما" --- */
@@ -76,17 +107,18 @@
     display: flex;
     flex-direction: row-reverse; /* عکس چپ، متن راست */
     align-items: center;
-    gap: 4rem;
-    padding: 5rem 2rem;
+    gap: 6rem;
+    padding: 6rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #f8f8f8; /* پس‌زمینه کمی متفاوت */
+    background-color: #1a2b3c; /* پس‌زمینه کمی روشن‌تر */
   }
   
   .storyContent {
     flex: 1;
     min-width: 300px;
     text-align: right;
+    padding-left: 20px; /* برای فضای بین متن و بوردر محتمل */
   }
   
   .storyImageContainer {
@@ -100,41 +132,27 @@
   .storyImage, .storyVideo {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  
-  /* استایل‌های مشترک برای عناوین بخش‌ها */
-  .sectionTitle {
-    font-size: 2.5rem;
-    color: #222;
-    margin-bottom: 1.5rem;
-    text-align: right;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  
-  .sectionText {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #555;
-    text-align: justify;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(80, 200, 255, 0.3); /* سایه عمیق با درخشش آبی */
+    border: 2px solid #50c8ff; /* بوردر نئونی آبی */
   }
   
   /* --- بخش "ارزش‌های اصلی" --- */
   .valuesSection {
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #0d1a26; /* پس‌زمینه تیره */
   }
   
-  .valuesSection .sectionTitle { /* عنوان بخش ارزش‌ها */
-    text-align: center; /* عنوان ارزش‌ها وسط‌چین */
-    margin-bottom: 2.5rem;
-    border-bottom: 2px solid #eee; /* خط زیر عنوان */
+  .valuesSection .sectionTitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 3px solid #eff15b;
     padding-bottom: 1rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .valuesList {
@@ -142,104 +160,72 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* گرید واکنش‌گرا */
-    gap: 2rem; /* فاصله بین آیتم‌ها */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
   }
   
   .valuesList li {
     font-size: 1rem;
     line-height: 1.7;
-    color: #666;
+    color: #c0d0e0; /* رنگ متن روشن */
     text-align: right;
-    background-color: #fdfdfd;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: #1a2b3c; /* پس‌زمینه آیتم‌های ارزش */
+    padding: 1.8rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(239, 241, 91, 0.2); /* سایه با درخشش زرد */
     position: relative;
-    padding-right: 35px; /* فضا برای آیکون */
+    padding-right: 45px;
+    border-right: 5px solid #eff15b; /* خط زرد نئونی کناری */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .valuesList li:hover {
+    transform: translateY(-8px); /* کمی بیشتر بالا رفتن */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 25px rgba(239, 241, 91, 0.4); /* سایه و درخشش بیشتر */
   }
   
   .valuesList li::before {
-    content: '✓';
-    color: #eff15b;
+    content: '⚡'; /* آیکون برق برای حس تکنولوژیک */
+    color: #50c8ff; /* رنگ آبی نئونی */
     font-weight: bold;
     position: absolute;
     right: 15px;
-    top: 1.5rem;
-    font-size: 1.2rem;
+    top: 1.8rem;
+    font-size: 1.4rem;
+    text-shadow: 0 0 8px rgba(80, 200, 255, 0.6); /* درخشش نئونی برای آیکون */
   }
   
   .valuesList li strong {
-    color: #222;
+    color: #eff15b; /* عنوان ارزش‌ها به رنگ زرد نئونی */
     font-weight: 700;
-    display: block; /* عنوان ارزش‌ها در یک خط جدید */
+    display: block;
     margin-bottom: 0.5rem;
-  }
-  
-  /* --- بخش "تیم ما" (اگر فعال شود) --- */
-  .teamSection {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #f8f8f8;
-  }
-  
-  .teamSection .sectionTitle {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 1rem;
-  }
-  
-  .teamGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-  }
-  
-  .teamMember {
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  .teamPhoto {
-    width: 150px; /* سایز بزرگتر عکس تیم */
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 4px solid #eff15b; /* بوردر زرد */
-  }
-  
-  .memberName {
     font-size: 1.2rem;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 0.3rem;
-  }
-  
-  .memberRole {
-    font-size: 0.9rem;
-    color: #777;
   }
   
   /* --- Responsive Adjustments --- */
+  @media (max-width: 1200px) {
+    .pageTitle {
+      font-size: 3.8rem;
+    }
+    .sectionTitle {
+      font-size: 2.5rem;
+    }
+  }
+  
+  
   @media (max-width: 992px) {
     .pageTitle {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
     }
     .heroDescription {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
     }
     .missionSection,
     .storySection {
       flex-direction: column; /* ستون‌ها روی هم */
       gap: 2.5rem;
-      padding: 3rem 1.5rem;
+      padding: 4rem 1.5rem;
     }
     .missionContent,
     .storyContent,
@@ -247,39 +233,53 @@
     .storyImageContainer {
       min-width: unset;
       width: 100%; /* عرض کامل */
+      text-align: center; /* متن و عکس‌ها وسط‌چین در موبایل */
     }
-    .missionImage {
-      width: 300px; /* سایز کوچکتر برای موبایل */
-      height: 300px;
+    .missionImage, .storyImage, .storyVideo {
+      max-width: 80%; /* سایز کوچکتر برای تبلت */
+      margin: 0 auto;
     }
     .sectionTitle {
       font-size: 2rem;
-      text-align: center; /* عنوان‌ها وسط‌چین در موبایل */
+      text-align: center; /* عنوان‌ها وسط‌چین */
     }
     .sectionText {
       text-align: right; /* متن justify حذف شد */
     }
     .valuesList {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
     .valuesList li {
       font-size: 0.95rem;
+      padding: 1.2rem;
+      padding-right: 40px;
+    }
+    .valuesList li::before {
+      right: 10px;
+      top: 1.2rem;
     }
   }
   
   @media (max-width: 768px) {
     .pageTitle {
-      font-size: 2.2rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
     }
     .heroDescription {
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
     .missionSection,
     .storySection,
-    .valuesSection,
-    .teamSection {
-      padding: 2.5rem 1rem;
+    .valuesSection {
+      padding: 3rem 1rem;
+    }
+    .missionImage {
+      width: 250px; /* سایز کوچکتر */
+      height: auto;
+    }
+    .storyImage, .storyVideo {
+      max-width: 90%;
     }
     .sectionTitle {
       font-size: 1.8rem;
@@ -290,40 +290,49 @@
     }
     .valuesList li {
       font-size: 0.85rem;
-      padding-right: 30px;
+      padding: 1rem;
+      padding-right: 35px;
     }
     .valuesList li strong {
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
-    .teamPhoto {
-      width: 100px;
-      height: 100px;
-    }
-    .memberName {
-      font-size: 1.05rem;
-    }
-    .memberRole {
-      font-size: 0.85rem;
+    .valuesList li::before {
+      font-size: 1.2rem;
+      right: 8px;
+      top: 1rem;
     }
   }
   
   @media (max-width: 480px) {
+    .aboutHero {
+      padding: 4rem 1rem;
+    }
     .pageTitle {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      font-size: 2.2rem;
     }
     .heroDescription {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+    }
+    .missionSection,
+    .storySection,
+    .valuesSection {
+      padding: 2.5rem 0.8rem;
+    }
+    .missionImage {
+      width: 200px;
+      height: auto;
     }
     .sectionTitle {
       font-size: 1.5rem;
     }
-    .missionImage {
-      width: 250px;
-      height: 250px;
+    .sectionText {
+      font-size: 0.85rem;
     }
-    .teamPhoto {
-      width: 80px;
-      height: 80px;
+    .valuesList {
+      grid-template-columns: 1fr; /* یک ستون در موبایل‌های خیلی کوچک */
+    }
+    .valuesList li {
+      padding: 0.8rem;
+      padding-right: 30px;
     }
   }
