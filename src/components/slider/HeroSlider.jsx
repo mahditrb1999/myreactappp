@@ -38,12 +38,19 @@ const HeroSlider = () => {
 
   return (
     <div className={styles.heroSliderContainer}>
-      <img
-        src={images[currentImageIndex]}
-        alt="Hero Section"
-        className={styles.heroImage}
-        onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found"; }}
-      />
+     <img
+  src={images[currentImageIndex]}
+  alt="Hero Section"
+  className={styles.heroImage}
+  loading={currentImageIndex === 0 ? "eager" : "lazy"}
+  fetchpriority={currentImageIndex === 0 ? "high" : "auto"}
+  width="1200"
+  height="600"
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = "https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found";
+  }}
+/>
       <div className={styles.sliderNavigation}>
         <button onClick={goToPrevious} className={`${styles.navButton} ${styles.prev}`}>
           &#10094; {/* Left arrow character */}

@@ -1,0 +1,97 @@
+/* src/pages/OrderPage.module.css */
+.orderContainer {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .pageTitle {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .selectedPlanInfo {
+    font-size: 1.1em;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+  
+  .orderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  .formInput,
+  .formTextarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+  
+  .formInput:focus,
+  .formTextarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  .formTextarea {
+    resize: vertical; /* اجازه تغییر سایز عمودی */
+    min-height: 100px;
+  }
+  
+  .submitButton {
+    background-color: #28a745; /* رنگ سبز */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* دکمه را در مرکز قرار می‌دهد */
+    width: auto;
+    min-width: 200px;
+  }
+  
+  .submitButton:hover {
+    background-color: #218838;
+  }
+  /* src/pages/OrderPage.module.css */
+/* ... کدهای CSS قبلی شما ... */
+
+.errorMessage {
+    color: #dc3545; /* رنگ قرمز برای پیام خطا */
+    text-align: center;
+    margin-top: -10px; /* برای فاصله کمتر با فرم */
+    font-size: 0.95em;
+  }
+  
+  .submitButton:disabled {
+    background-color: #cccccc; /* خاکستری شدن دکمه هنگام غیرفعال بودن */
+    cursor: not-allowed;
+  }
